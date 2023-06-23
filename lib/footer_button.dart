@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pmi_calculator/constants.dart';
+import 'package:pmi_calculator/result_parameters.dart';
 import 'package:pmi_calculator/results.dart';
 
 class footer_buttom extends StatefulWidget {
@@ -23,14 +24,10 @@ class _footer_buttomState extends State<footer_buttom> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return Results(result: widget.result);
-            }
-          )
-        );   
+        Navigator.pushNamed(context, Results.routeName,
+            arguments: ResultArguments(
+              widget.result,
+            ));
       },
       onTapDown: (_) {
         _handleHover(true);

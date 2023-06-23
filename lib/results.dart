@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:pmi_calculator/card_container.dart';
 import 'package:pmi_calculator/constants.dart';
+import 'package:pmi_calculator/result_parameters.dart';
 
 class Results extends StatelessWidget {
-  Results({super.key, required this.result});
-  String result;
+  Results({super.key});
+
+  static const routeName = 'results';
 
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as ResultArguments;
+    
     return Scaffold(
       appBar: AppBar(
         title: const Text('BMI Results'),
@@ -30,17 +34,14 @@ class Results extends StatelessWidget {
                         ),
                       )
                     ]),
-                    Padding(
-                      padding: EdgeInsets.only(top: 25),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            result,
-                            style: kNumberTextStyle,
-                          )
-                        ],
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          args.result,
+                          style: kHeightStyle,
+                        )
+                      ],
                     )
                   ]),
                   onPress: () {},
