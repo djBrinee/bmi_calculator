@@ -16,3 +16,10 @@ const kDialogTitleTextStyle = TextStyle(
   fontSize: 30,
   color: Color.fromARGB(255, 139, 159, 250),
 );
+
+const kCalculateButtonStyle = TextStyle(
+  fontFamily: 'YsabeauFont',
+  fontSize: 30,
+);
+
+const Color kButtonContainerColorHover = Color.fromARGB(255, 64, 3, 21);

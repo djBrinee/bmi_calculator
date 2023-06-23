@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pmi_calculator/SquaredRoundedButton.dart';
 import 'package:pmi_calculator/card_container.dart';
 import 'package:pmi_calculator/constants.dart';
+import 'package:pmi_calculator/footer_button.dart';
 import 'package:pmi_calculator/iconContent.dart';
 
 enum Gender { male, female }
@@ -117,7 +118,7 @@ class _InputPageState extends State<InputPage> {
                               icon: FontAwesomeIcons.minus,
                               onPress: () {
                                 setState(() {
-                                  if (weight > 0) {
+                                  if (weight > 38) {
                                     weight--;
                                   } else {
                                     (_showAlertDialog(
@@ -160,10 +161,10 @@ class _InputPageState extends State<InputPage> {
                               onPress: () {
                                 setState(() {
                                   if (age > 18) {
-                                    weight--;
+                                    age--;
                                   } else {
                                     (_showAlertDialog(
-                                        "Yoy can't type this height", 'Unavailable height'));
+                                        "Yoy can't type this height", 'Unavailable age'));
                                   }
                                 });
                               },
@@ -173,10 +174,10 @@ class _InputPageState extends State<InputPage> {
                               onPress: () {
                                 setState(() {
                                   if (age < 120) {
-                                    weight++;
+                                    age++;
                                   } else {
                                     (_showAlertDialog(
-                                        "Yoy can't type this height", 'Unavailable height'));
+                                        "Yoy can't type this height", 'Unavailable age'));
                                   }
                                 });
                               },
@@ -190,12 +191,7 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            Container(
-              color: kButtonContainerColor,
-              height: 80,
-              width: double.infinity,
-              margin: const EdgeInsets.only(top: 10.0),
-            )
+            footer_buttom(result: (weight / (height / 100 * height / 100)).toStringAsFixed(2)),
           ],
         ));
   }
