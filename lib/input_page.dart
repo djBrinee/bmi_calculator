@@ -164,7 +164,7 @@ class _InputPageState extends State<InputPage> {
                                     age--;
                                   } else {
                                     (_showAlertDialog(
-                                        "Yoy can't type this height", 'Unavailable age'));
+                                        "Yoy can't type this age", 'Unavailable age'));
                                   }
                                 });
                               },
@@ -177,7 +177,7 @@ class _InputPageState extends State<InputPage> {
                                     age++;
                                   } else {
                                     (_showAlertDialog(
-                                        "Yoy can't type this height", 'Unavailable age'));
+                                        "Yoy can't type this age", 'Unavailable age'));
                                   }
                                 });
                               },
